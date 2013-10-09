@@ -4,13 +4,6 @@
  Author: Jason Webb
  Author website: http://jason-webb.info
  Github repo: https://github.com/jasonwebb/SurfaceMapperGUI
- 
- BUGS
- ====
- 1) Textures assigned to surfaces cannot be loaded
-    via XML during Load Layout - crashes. Use "load/save
-    layout" functions to also generate a separate XML
-    file that saves all texture arraylists
     
  FUTURE IMPROVEMENTS
  ===================
@@ -49,8 +42,8 @@ ProgramOptionsMenu programOptions;
 int mostRecentSurface = 0;
 
 void setup(){
-  size(screenWidth, screenHeight, GLConstants.GLGRAPHICS);
-//  size(1024, 768, GLConstants.GLGRAPHICS);
+//  size(screenWidth, screenHeight, GLConstants.GLGRAPHICS);
+  size(1024, 768, GLConstants.GLGRAPHICS);
   
   // Setup the ControlP5 GUI
   gui = new ControlP5(this);
@@ -85,60 +78,10 @@ void setup(){
   movies = new ArrayList();
   movieTextureLookup = new ArrayList();
   
-  // Load default texture for quad
+  // Create reference to default texture for first quad
   textureLookup.add(0);
   
-  // Load all textures from texture folder
-  File file = new File(sketchPath + "/data/textures");
-  
-  if(file.isDirectory()) {
-    File[] files = file.listFiles();
-    
-    for(int i=0; i<files.length; i++) {
-      // Get and split the filename
-      String filename = files[i].getName();
-      String[] filenameParts = split(filename,".");
-      
-      // Check to see if file is an image
-      boolean isImage = false;
-      for(int j=0; j<imageTypes.length; j++)
-        if(filenameParts[1].equals(imageTypes[j]))
-          isImage = true;
-
-      // Check to see if file is a movie
-      boolean isMovie = false;
-      if(!isImage)
-        for(int j=0; j<movieTypes.length; j++)
-          if(filenameParts[1].equals(movieTypes[j]))
-            isMovie = true;
-
-      // Create a texture for the files, add to ArrayList
-      GLTexture tex;
-      
-      // Images get added directly to textures ArrayList
-      if(isImage) {
-        tex = new GLTexture(this, sketchPath + "/data/textures/" + filename);
-        textures.add(tex);
-        textureNames.add(filename);
-        
-      // Videos need empty texture in textures ArrayList, as well as
-      // actual video in videos ArrayList (and lookup)
-      } else if(isMovie) {      
-        // Create texture 
-        tex = new GLTexture(this);
-        textures.add(tex);
-        textureNames.add(filename);
-        
-        // Create movie
-        GSMovie movie = new GSMovie(this, sketchPath + "/data/textures/" + filename);
-        movie.setPixelDest(tex);
-        movies.add(movie);
-        
-        // Associate movie to texture
-        movieTextureLookup.add(movies.size()-1, textures.size()-1);
-      }
-    }
-  }
+  loadTextures();
 }
 
 void draw(){
@@ -223,12 +166,75 @@ public void controlEvent(ControlEvent e) {
     // Program Options -> Load layout button
     case 3:
       sm.load(selectInput("Load layout"));
+      
+      // Clear out ArrayLists
+      textureLookup.clear();
+      movieTextureLookup.clear();
+      
+      // Read textureLookup.txt
+      try {
+        BufferedReader reader = createReader(sketchPath + "/data/lookups/textureLookup.txt");
+        String line;
+        
+        try {
+          while((line = reader.readLine()) != null)
+            textureLookup.add(Integer.parseInt(line));
+            
+          println("Texture lookups successfully loaded.");
+        } catch(IOException ee) {
+          println("Could not read line from textureLookup.txt");
+        }
+      } catch(Exception ee) {
+        println("Could not load textureLookup.txt");
+        
+        ArrayList surfaces = sm.getSurfaces();
+        for(int i=0; i<surfaces.size(); i++) {
+          textureLookup.add(0);
+        }
+      }
+      
+      // Read movieTextureLookup.txt
+      try {
+        BufferedReader reader = createReader(sketchPath + "/data/lookups/movieTextureLookup.txt");
+        String line;
+        
+        try {
+          while((line = reader.readLine()) != null)
+            movieTextureLookup.add(Integer.parseInt(line));
+            
+          println("Movie/texture lookups successfully loaded.");
+        } catch(IOException ee) {
+          println("Could not read line from movieTextureLookup.txt");
+        }
+      } catch(Exception ee) {
+        println("Could not load movieTextureLookup.txt");
+      }
+           
       mostRecentSurface = 0;
       break;      
       
     // Program Options -> Save layout button
     case 4:
       sm.save(selectOutput("Save layout"));
+      
+      // Write textureLookup to file
+      PrintWriter output = createWriter(sketchPath + "/data/lookups/textureLookup.txt");
+      for(int i=0; i<textureLookup.size(); i++) {
+        int id = (int)textureLookup.get(i);
+        output.println(id);
+      }
+      output.flush();
+      output.close();
+      
+      // Write movieTextureLookup to file
+      output = createWriter(sketchPath + "/data/lookups/movieTextureLookup.txt");
+      for(int i=0; i<movieTextureLookup.size(); i++) {
+        int id = (int)movieTextureLookup.get(i);
+        output.println(id);
+      }
+      output.flush();
+      output.close();      
+      
       break;
 
     // Program Options -> Switch to render mode
@@ -391,4 +397,58 @@ void keyReleased() {
 **************************************/
 void movieEvent(GSMovie movie) {
   movie.read();
+}
+
+void loadTextures() {
+  // Load all textures from texture folder
+  File file = new File(sketchPath + "/data/textures");
+  
+  if(file.isDirectory()) {
+    File[] files = file.listFiles();
+    
+    for(int i=0; i<files.length; i++) {
+      // Get and split the filename
+      String filename = files[i].getName();
+      String[] filenameParts = split(filename,".");
+      
+      // Check to see if file is an image
+      boolean isImage = false;
+      for(int j=0; j<imageTypes.length; j++)
+        if(filenameParts[1].equals(imageTypes[j]))
+          isImage = true;
+
+      // Check to see if file is a movie
+      boolean isMovie = false;
+      if(!isImage)
+        for(int j=0; j<movieTypes.length; j++)
+          if(filenameParts[1].equals(movieTypes[j]))
+            isMovie = true;
+
+      // Create a texture for the files, add to ArrayList
+      GLTexture tex;
+      
+      // Images get added directly to textures ArrayList
+      if(isImage) {
+        tex = new GLTexture(this, sketchPath + "/data/textures/" + filename);
+        textures.add(tex);
+        textureNames.add(filename);
+        
+      // Videos need empty texture in textures ArrayList, as well as
+      // actual video in videos ArrayList (and lookup)
+      } else if(isMovie) {      
+        // Create texture 
+        tex = new GLTexture(this);
+        textures.add(tex);
+        textureNames.add(filename);
+        
+        // Create movie
+        GSMovie movie = new GSMovie(this, sketchPath + "/data/textures/" + filename);
+        movie.setPixelDest(tex);
+        movies.add(movie);
+        
+        // Associate movie to texture
+        movieTextureLookup.add(movies.size()-1, textures.size()-1);
+      }
+    }
+  }
 }

@@ -71,6 +71,8 @@ class ProgramOptionsMenu {
       textFont(smallFont);
       fill(255);
       text("Double click to return", programGroup.getPosition().x + 20, programGroup.getPosition().y + 245);
+      
+      text("Hit Escape to close program", programGroup.getPosition().x + 20, programGroup.getPosition().y + 280);      
     }
   }
   

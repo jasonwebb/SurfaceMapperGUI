@@ -1,14 +1,8 @@
 <ProjectionMap>
   <surface type="0" id="0" name="0" res="6" lock="false" horizontalForce="0" verticalForce="0">
-    <cornerpoint i="0" x="228.0" y="350.0"/>
-    <cornerpoint i="1" x="328.0" y="350.0"/>
-    <cornerpoint i="2" x="328.0" y="450.0"/>
-    <cornerpoint i="3" x="228.0" y="450.0"/>
-  </surface>
-  <surface type="0" id="1" name="1" res="3" lock="false" horizontalForce="0" verticalForce="0">
-    <cornerpoint i="0" x="503.0" y="223.0"/>
-    <cornerpoint i="1" x="603.0" y="223.0"/>
-    <cornerpoint i="2" x="603.0" y="323.0"/>
-    <cornerpoint i="3" x="503.0" y="323.0"/>
+    <cornerpoint i="0" x="462.0" y="334.0"/>
+    <cornerpoint i="1" x="562.0" y="334.0"/>
+    <cornerpoint i="2" x="562.0" y="434.0"/>
+    <cornerpoint i="3" x="462.0" y="434.0"/>
   </surface>
 </ProjectionMap>
