@@ -1,6 +1,4 @@
----
-
-***WARNING:** This project is no longer actively maintained - use at your own risk!
+###***WARNING:*** This project is no longer actively maintained - use at your own risk!
 
 It was built upon ixagon's SurfaceMapper library, which was abandoned shortly after the release of this project. This repository is made available mainly for educational and illustrative purposes, and it is recommended that other approaches be explored if you need to do some real-world projection mapping.
 
