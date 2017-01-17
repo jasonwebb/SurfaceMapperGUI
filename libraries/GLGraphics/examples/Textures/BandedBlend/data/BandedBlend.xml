@@ -1,0 +1,6 @@
+<filter name="Banded Blend">
+    <description>Blends two source textures intercalating horizontal bands from each texture</description>
+    <fragment>BandedBlend.glsl</fragment>
+    <textures input="2" output="1"></textures>
+    <parameter type="int" name="band_size" label="Band size">10</parameter>
+</filter>

@@ -1,0 +1,16 @@
+<filter name="Color Particles Shader">
+    <description>Updates the color of the particles</description>
+    <fragment>ColorPart.glsl</fragment>
+    <textures input="6" output="3"></textures>
+    <parameter type="int" name="max_brush_len" label="Maximum brush length">10</parameter>
+    <parameter type="float" name="new_img_coeff" label="New image coefficient">0.0</parameter>
+    <parameter type="float" name="color_chg_frac" label="Color change fraction">3.0</parameter>
+    <parameter type="float" name="color_chg_pow" label="Color change power">1.0</parameter>    
+    <grid mode="compiled">
+        <resolution nx="w" ny="h" mode="points"></resolution>
+	    <point>
+	        <coord x="x" y="y"></coord>
+            <texcoord s="s" t="t"></texcoord>
+	    </point>
+    </grid>
+</filter>

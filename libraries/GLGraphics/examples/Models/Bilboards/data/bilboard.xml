@@ -1,0 +1,14 @@
+<effect name="Bilboard">
+    <description>Bilboard effect</description>
+    <vertex>bilboard.glsl</vertex>
+    <fragment>texture.glsl</fragment>    
+    <textures>
+        <texture type="sampler2d" name="bilTex" label="Bilboard texture">0</texture>
+    </textures>    
+    <vertexattribs>
+        <vertexattrib type="vec3" name="objCorn" label="Object corners">0 0 0</vertexattrib>
+    </vertexattribs>
+    <parameters>
+        <parameter type="int" name="textured" label="Textured">0</parameter>
+    </parameters>
+</effect>

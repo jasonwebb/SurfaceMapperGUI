@@ -1,0 +1,5 @@
+<filter name="Brightness extraction">
+    <description>Brightness extraction</description>
+    <fragment>brightExtract.glsl</fragment>
+    <textures input="1" output="1"></textures>
+</filter>

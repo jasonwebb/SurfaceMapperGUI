@@ -1,15 +1,14 @@
-/********************************************************
+/**************************************************************
  SurfaceMapperGUI
+ 
+ Description: 
+   A simple projection mapping interface using 
+   Processing's SurfaceMapper and ControlP5 libraries.
  
  Author: Jason Webb
  Author website: http://jason-webb.info
  Github repo: https://github.com/jasonwebb/SurfaceMapperGUI
-    
- FUTURE IMPROVEMENTS
- ===================
- 1) Add ability to remove a surface
- 
-********************************************************/
+***************************************************************/
 import ixagon.SurfaceMapper.*;
 import processing.opengl.*;
 import codeanticode.glgraphics.*;
@@ -173,7 +172,7 @@ public void controlEvent(ControlEvent e) {
       
       // Read textureLookup.txt
       try {
-        BufferedReader reader = createReader(sketchPath + "/data/lookups/textureLookup.txt");
+        BufferedReader reader = createReader("data/lookups/textureLookup.txt");
         String line;
         
         try {
@@ -195,7 +194,7 @@ public void controlEvent(ControlEvent e) {
       
       // Read movieTextureLookup.txt
       try {
-        BufferedReader reader = createReader(sketchPath + "/data/lookups/movieTextureLookup.txt");
+        BufferedReader reader = createReader("data/lookups/movieTextureLookup.txt");
         String line;
         
         try {
@@ -218,7 +217,7 @@ public void controlEvent(ControlEvent e) {
       sm.save(selectOutput("Save layout"));
       
       // Write textureLookup to file
-      PrintWriter output = createWriter(sketchPath + "/data/lookups/textureLookup.txt");
+      PrintWriter output = createWriter("data/lookups/textureLookup.txt");
       for(int i=0; i<textureLookup.size(); i++) {
         int id = (int)textureLookup.get(i);
         output.println(id);
@@ -227,7 +226,7 @@ public void controlEvent(ControlEvent e) {
       output.close();
       
       // Write movieTextureLookup to file
-      output = createWriter(sketchPath + "/data/lookups/movieTextureLookup.txt");
+      output = createWriter("data/lookups/movieTextureLookup.txt");
       for(int i=0; i<movieTextureLookup.size(); i++) {
         int id = (int)movieTextureLookup.get(i);
         output.println(id);
@@ -401,7 +400,7 @@ void movieEvent(GSMovie movie) {
 
 void loadTextures() {
   // Load all textures from texture folder
-  File file = new File(sketchPath + "/data/textures");
+  File file = new File(dataPath("") + "textures");
   
   if(file.isDirectory()) {
     File[] files = file.listFiles();
@@ -429,7 +428,7 @@ void loadTextures() {
       
       // Images get added directly to textures ArrayList
       if(isImage) {
-        tex = new GLTexture(this, sketchPath + "/data/textures/" + filename);
+        tex = new GLTexture(this, "data/textures/" + filename);
         textures.add(tex);
         textureNames.add(filename);
         
@@ -442,7 +441,7 @@ void loadTextures() {
         textureNames.add(filename);
         
         // Create movie
-        GSMovie movie = new GSMovie(this, sketchPath + "/data/textures/" + filename);
+        GSMovie movie = new GSMovie(this, dataPath("") + "textures/" + filename);
         movie.setPixelDest(tex);
         movies.add(movie);
         
@@ -450,5 +449,7 @@ void loadTextures() {
         movieTextureLookup.add(movies.size()-1, textures.size()-1);
       }
     }
+  } else {
+    println("tesT");
   }
 }

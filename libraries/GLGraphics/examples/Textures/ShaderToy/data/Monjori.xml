@@ -1,0 +1,11 @@
+<filter name="Monjori">
+    <description>Code for the 1k intro Monjori from the demoscene (http://www.pouet.net/prod.php?which=52761)</description>
+    <fragment>Monjori.glsl</fragment>    
+    <textures input="0" output="1"></textures>    
+    <parameters>
+        
+        <parameter type="float" name="time" label="Time">0</parameter>
+    
+        <parameter type="vec2" name="resolution" label="Screen resolution">0 0</parameter>     
+    </parameters>
+</filter>

@@ -1,0 +1,6 @@
+<filter name="Rotate">
+    <description>Rotates the texture coordinates of the input texture</description>
+    <fragment>Rotation.glsl</fragment>
+    <textures input="1" output="1"></textures>
+    <parameter type="mat2" name="rot_matrix" label="2D rotation matrix">2 0 0 0</parameter>
+</filter>

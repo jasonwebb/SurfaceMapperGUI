@@ -82,7 +82,7 @@ class QuadOptionsMenu {
    of all the textures found in data/texures
   **************************************************/
   void compileSourceList() {
-    File file = new File(sketchPath + "/data/textures");
+    File file = new File(dataPath("") + "textures");
     
     if(file.isDirectory()) {
       File[] files = file.listFiles();

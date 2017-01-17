@@ -1,0 +1,14 @@
+<filter name="tone mapping">
+    <description>Filter that computes the tone mapping of an HDR image with a bloom mask</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>ToneMap.glsl</fragment>
+    <textures input="2" output="1">
+        <intexture type="sampler2d" name="image_tex" label="Texture with source image">0</intexture>
+        <intexture type="sampler2d" name="bloom_tex" label="Texture with bloom mask">1</intexture>
+    </textures>
+    <parameters>
+        <parameter type="float" name="exposure" label="Exposure level">0.86</parameter>
+        <parameter type="float" name="bloom" label="Bloom factor">0.5</parameter>
+        <parameter type="float" name="bright" label="Brightness threshold">0.9</parameter>
+    </parameters>
+</filter>

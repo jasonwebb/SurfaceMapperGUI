@@ -1,0 +1,8 @@
+<filter name="Move Particles Shader">
+    <description>Updates the position of the particles</description>
+    <fragment>MovePart.glsl</fragment>
+    <textures input="2" output="2"></textures>
+    <parameter type="vec2" name="edges" label="Edges for particles motion">100 100</parameter>
+    <parameter type="vec2" name="mpos" label="Mouse position">0 0</parameter>
+    <parameter type="vec2" name="mdisp" label="Mouse displacement">0 0</parameter>
+</filter>

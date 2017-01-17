@@ -1,0 +1,16 @@
+<effect name="bump map">
+    <description>Bump mapping effect</description>
+    <vertex>shinyvert.glsl</vertex>
+    <fragment>shinyfrag.glsl</fragment>
+    <textures>
+        <texture type="sampler2d" name="Base" label="Map of base heights in alpha channel">0</texture>
+        <texture type="sampler2d" name="NormalHeight" label="Map of normal heights in alpha channel">1</texture>
+    </textures>
+    <vertexattribs>
+        <vertexattrib type="vec3" name="tangent" label="Tangent vector">0 0 0</vertexattrib>
+        <vertexattrib type="vec3" name="binormal" label="Binormal vector">0 0 0</vertexattrib>
+    </vertexattribs>
+    <parameters>
+        <parameter type="vec2" name="cBumpSize" label="Bump size">0.0 0.0</parameter>
+    </parameters>
+</effect>

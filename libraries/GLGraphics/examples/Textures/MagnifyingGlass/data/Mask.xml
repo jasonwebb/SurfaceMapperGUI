@@ -1,0 +1,7 @@
+<filter name="Mask">
+    <description>Lens mask</description>
+    <fragment>Mask.glsl</fragment>
+    <textures input="1" output="1"></textures>
+    <parameter type="vec2" name="center" label="center">0 0</parameter>    
+    <parameter type="float" name="radius" label="radius">0</parameter>
+</filter>

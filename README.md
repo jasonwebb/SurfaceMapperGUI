@@ -1,27 +1,31 @@
-```
-WARNING: This project is no longer actively maintained - use at your own risk!
-
-It was built upon ixagon's SurfaceMapper library, which has since been abandoned. This repository is made available mainly for educational and illustrative purposes, and it is recommended that other approaches be explored if you need to do some real-world projection mapping.
-
-Check out openFrameworks and its various projection mapping addons available through http://ofxaddons.com (ofx2DMapping, ofxPiMapper and others)
-```
+---
+WARNING: This project is based on a deprecated Processing library called SurfaceMapper, which forces the use of an older version of Processing. It is recommended that you use this project to learn about the fundamentals of projection mapping in Processing, but do not use it for serious work.
+---
 
 ## SurfaceMapperGUI
 
-Projection mapping interface using Processing's SurfaceMapper library and ControlP5 libraries
+Projection mapping interface using Processing's SurfaceMapper library and ControlP5 libraries.
 
-### Features
-1. Create new surfaces (straight-edged quads or curved-edged bezier surfaces).
-2. Load and save layouts.
-3. Switch back and forth between rendering and calibrating.
-4. Alter the resolution of the surfaces.
-5. Alter the horizontal and vertical “force” on the edges of bezier surfaces.
-6. Anchor points that are moved close to each other will snap together.
-7. Assign pictures or videos as textures to any surface.
+## Features
+* Create morphable surfaces and associate them with images or videos
+  * Surfaces can be simple, straight-edged quads or more complex bezier surfaces with curved edges
+  * Control the "resolution" of any surface to get more or less smooth edges as needed.
+  * Uniformly inflate/deflate bezier surfaces by applying horizontal or vertical forces.
+* Load and save layouts using ControlP5.
+* Toggle back and forth between rendering and calibrating.
+* Anchor points that are moved close to each other will snap together.
 
-### Requirements
-* Processing 1.5.1 - https://processing.org/download/?processing
-* SurfaceMapper library - ~~http://www.ixagon.se/surfacemapper/~~ (dead) - https://bitbucket.org/ixagon/surfacemapper
-* ControlP5 library - http://www.sojamo.de/libraries/controlP5/
-* GLGraphics - http://glgraphics.sourceforge.net/
-* GSVideo - http://gsvideo.sourceforge.net/
+## Requirements
+* [Processing 1.5.1](https://processing.org/download/?processing)
+* [SurfaceMapper 0.912](https://bitbucket.org/ixagon/surfacemapper) - included in __libraries/__
+* [ControlP5 1.5.2](http://www.sojamo.de/libraries/controlP5/) - included in __libraries/__
+* [GLGraphics 1.0.0](http://glgraphics.sourceforge.net/) - included in __libraries/__
+* [GSVideo 1.0.0](http://gsvideo.sourceforge.net/) - included in __libraries/__
+
+## Screenshots
+
+![Default view](docs/images/default-view.png)
+
+![Multiple surfaces](docs/images/multiple-surfaces.png)
+
+![Bezier surface](docs/images/bezier-surface.png)

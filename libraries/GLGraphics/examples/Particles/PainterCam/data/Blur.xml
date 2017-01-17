@@ -1,0 +1,5 @@
+<filter name="Blur filter">
+    <description>Gauss convolution filter</description>
+    <fragment>BlurFilter.glsl</fragment>
+    <textures input="1" output="1"></textures>
+</filter>

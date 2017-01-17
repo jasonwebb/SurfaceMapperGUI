@@ -1,0 +1,22 @@
+// Using a connector struct simplifies code & helps avoid errors
+struct VertOut {
+  float4 Position : POSITION; 
+  float2 UV       : TEXCOORD0;
+  float3 Normal   : TEXCOORD1;
+  float3 LightPos : TEXCOORD2;
+  float3 ObjPos   : TEXCOORD3;
+};
+
+VertOut main(float4 position  : POSITION,
+             float3 normal    : NORMAL,
+             float2 uv        : TEXCOORD0,
+             uniform float4x4 worldViewProj,
+             uniform float3 lightPos) {
+  VertOut OUT = (VertOut)0;
+  OUT.Position = mul(worldViewProj, position); 
+  OUT.ObjPos = position;
+  OUT.Normal = normal;
+  OUT.UV = uv;
+  OUT.LightPos = lightPos;
+  return OUT;
+}

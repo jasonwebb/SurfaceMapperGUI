@@ -1,0 +1,37 @@
+<model name="textured cube">
+    <description>Textured cube with attributes for bump mapping</description>
+    <size>24</size>
+    <geometry>QUADS</geometry>
+    <mode>DYNAMIC</mode>
+
+    <textures>
+        <texture name="Base" file="img.png">0</texture>
+        <texture name="NormalHeight" file="bump.png">1</texture>
+    </textures>
+
+    <vertexattribs>
+        <vertexattrib name="tangent" size="3">0</vertexattrib>
+        <vertexattrib name="binormal" size="3">1</vertexattrib>
+    </vertexattribs>
+
+    <vertices file="vertices.bin">
+    </vertices>
+
+    <texcoords unit="0" file="texcoords0.bin">
+    </texcoords>
+
+    <texcoords unit="1" file="texcoords1.bin">
+    </texcoords>
+
+    <colors file="colors.bin">
+    </colors>
+
+    <normals file="normals.bin">
+    </normals>
+
+    <attribs number="0" file="attributes0.bin">
+    </attribs>
+
+    <attribs number="1" file="attributes1.bin">
+    </attribs>
+</model>

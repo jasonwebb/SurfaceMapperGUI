@@ -1,0 +1,16 @@
+<filter name="Feedback">
+    <description>FeedBack with modifier</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>Feedback.glsl</fragment>
+     <parameter type="float" name="radio" label="R">7.</parameter>
+     <parameter type="float" name="amp" label="R">4.1</parameter>
+   	 <parameter type="int" name="dirs" label="Number of directionss">9</parameter>
+
+
+    <textures input="1" output="1">
+        
+        <intexture type="sampler2D" name="src_tex_unit0" offset="offset" label="Pattern">0</intexture>
+        
+
+    </textures>
+</filter>

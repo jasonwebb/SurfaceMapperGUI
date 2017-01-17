@@ -1,0 +1,16 @@
+<filter name="Move Particles Shader">
+    <description>Updates the position of the particles</description>
+    <fragment>MovePart.glsl</fragment>
+    <textures input="4" output="1"></textures>    
+    <parameter type="vec2" name="max_pos" label="Maximum position">100 100</parameter>
+    <parameter type="int" name="follow_grad" label="Follow gradient">1</parameter>
+    <parameter type="float" name="mean_vel" label="Mean velocity">1.0</parameter>
+    <parameter type="float" name="noise_mag" label="Noise magnitude">1.0</parameter>    
+    <grid mode="compiled">
+        <resolution nx="w" ny="h" mode="points"></resolution>
+	    <point>
+	        <coord x="x" y="y"></coord>
+            <texcoord s="s" t="t"></texcoord>
+	    </point>
+    </grid>
+</filter>

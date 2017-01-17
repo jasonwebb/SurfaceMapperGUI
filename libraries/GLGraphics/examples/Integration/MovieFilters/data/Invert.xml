@@ -1,0 +1,7 @@
+<filter name="Mouse inversion">
+    <description>Inverts the color of the pixels according to their distance to the mouse cursor</description>
+    <fragment>Invert.glsl</fragment>
+    <textures input="1" output="1"></textures>
+    <parameter type="vec2" name="mpos" label="Mouse position">0 0</parameter>
+    <parameter type="float" name="mdist" label="Maximum distance to the mouse">50.0</parameter>
+</filter>

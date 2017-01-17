@@ -1,0 +1,11 @@
+<filter name="gaussian blur">
+    <description>1D Gaussian blur convolution filter of size 13</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>Blur1D.glsl</fragment>
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="tex" offset="offset" label="Input image">0</intexture>
+    </textures>
+    <parameters>
+        <parameter type="vec2" name="dir" label="Sampling direction">0 0</parameter>
+    </parameters>
+</filter>

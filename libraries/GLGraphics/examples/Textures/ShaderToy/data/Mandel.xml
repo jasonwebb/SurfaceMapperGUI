@@ -1,0 +1,11 @@
+<filter name="Mandel">
+    <description>A zoom in the Mandelbrot set</description>
+    <fragment>Mandel.glsl</fragment>    
+    <textures input="0" output="1"></textures>    
+    <parameters>
+        
+        <parameter type="float" name="time" label="Time">0</parameter>
+    
+        <parameter type="vec2" name="resolution" label="Screen resolution">0 0</parameter>     
+    </parameters>
+</filter>

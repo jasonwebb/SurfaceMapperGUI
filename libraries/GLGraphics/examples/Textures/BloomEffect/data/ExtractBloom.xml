@@ -1,0 +1,11 @@
+<filter name="extract bloom">
+    <description>Filter that extracts the bloom mask from an input texture</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>ExtractBloom.glsl</fragment>
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="tex" label="Texture from which bloom is calculated">0</intexture>    
+    </textures>
+    <parameters>
+        <parameter type="float" name="bright_threshold" label="Brightness threshold">0.99</parameter>
+    </parameters>
+</filter>

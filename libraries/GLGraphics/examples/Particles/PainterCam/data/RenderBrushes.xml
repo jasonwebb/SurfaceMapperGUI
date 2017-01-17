@@ -1,0 +1,30 @@
+<filter name="Render brushes shader">
+    <description>Renders the brushes that correspond to each particle</description>
+    <vertex>PlaceBrushes.glsl</vertex>
+    <fragment>RenderBrushes.glsl</fragment>
+    <textures input="4" output="1"></textures>
+    <parameter type="float" name="brush_size" label="Brush size">5.0</parameter>
+    <grid mode="compiled">
+        <resolution nx="w3" ny="h3" mode="quads"></resolution>
+		<point>
+		    <coord x="-0.5" y="+0.5"></coord>
+            <texcoord s="s" t="t"></texcoord>
+            <texcoord s="0.0" t="1.0"></texcoord>
+		</point>
+		<point>
+		    <coord x="+0.5" y="+0.5"></coord>
+            <texcoord s="s" t="t"></texcoord>
+            <texcoord s="1.0" t="1.0"></texcoord>
+		</point>
+		<point>
+		    <coord x="+0.5" y="-0.5"></coord>
+            <texcoord s="s" t="t"></texcoord>
+            <texcoord s="1.0" t="0.0"></texcoord>
+		</point>
+		<point>
+		    <coord x="-0.5" y="-0.5"></coord>
+            <texcoord s="s" t="t"></texcoord>
+            <texcoord s="0.0" t="0.0"></texcoord>
+		</point>
+    </grid>
+</filter>

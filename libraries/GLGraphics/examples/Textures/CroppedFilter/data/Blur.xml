@@ -1,0 +1,11 @@
+<filter name="Gaussian blur">
+    <description>3x3 Gaussian blur convolution filter</description>
+    <vertex>Vertex.glsl</vertex>
+    <fragment>Blur.glsl</fragment>
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="tex" offset="offset" label="Input image">0</intexture>
+    </textures>
+    <parameters>
+      <parameter type="tint" name="tint" label="Tint applied to output color"></parameter>
+    </parameters>
+</filter>

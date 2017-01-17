@@ -1,0 +1,14 @@
+<filter name="Deform">
+    <description>A GLSL version of the oldschool 2D deformation effect</description>
+    <fragment>Deform.glsl</fragment>    
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="tex0" offset="offset" label="Input image">0</intexture> 
+    </textures>    
+    <parameters>
+        
+        <parameter type="float" name="time" label="Time">0</parameter>
+    
+        <parameter type="vec2" name="resolution" label="Screen resolution">0 0</parameter>  
+        <parameter type="vec4" name="mouse" label="Mouse position">0 0 0 0</parameter>        
+    </parameters>
+</filter>

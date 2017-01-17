@@ -1,0 +1,38 @@
+<filter name="pulsating emboss">
+    <description>Dynamic emboss convolution filter with pulsating vertex grid</description>
+    <vertex>PulseGrid.glsl</vertex>
+    <fragment>DynEmboss.glsl</fragment>
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="src_tex_unit0" offset="src_tex_offset0" label="Input image">0</intexture>
+    </textures>
+    <specialpars>
+        <specialpar type="clock" name="clock_data" label="Clock data from application"></specialpar>
+        <specialpar type="size" name="dest_tex_size" label="Size of output texture"></specialpar>
+        <specialpar type="tint" name="dest_color" label="Tint applied to output color"></specialpar>
+    </specialpars>
+    <grid mode="compiled">
+        <resolution nx="10" ny="10" mode="quads"></resolution>
+
+        <point>
+            <coord x="x" y="y" dx="0.0" dy="0.0"></coord>
+            <texcoord s="s" t="t" ds="0.0" dt="0.0"></texcoord>
+        </point>
+
+        <point>
+            <coord x="x" y="y" dx="dx" dy="0.0"></coord>
+            <texcoord s="s" t="t" ds="ds" dt="0.0"></texcoord>
+        </point>
+
+        <point>
+            <coord x="x" y="y" dx="dx" dy="dy"></coord>
+            <texcoord s="s" t="t" ds="ds" dt="dt"></texcoord>
+        </point>
+
+        <point>
+            <coord x="x" y="y" dx="0.0" dy="dy"></coord>
+            <texcoord s="s" t="t" ds="0.0" dt="dt"></texcoord>
+        </point>
+
+    </grid>
+</filter>
+

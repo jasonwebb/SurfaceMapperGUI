@@ -1,0 +1,31 @@
+// Using a connector struct simplifies code & helps avoid errors
+struct VertOut {
+  float4 Position : POSITION; 
+  float2 UV       : TEXCOORD0;
+  float3 Normal   : TEXCOORD1;
+  float3 LightPos : TEXCOORD2;
+  float3 ObjPos   : TEXCOORD3;
+};
+
+float4 main(VertOut IN,
+            // The TEXUNIT semantic is needed because the
+            // texture is bound in the application using OpenGL calls.
+			uniform sampler2D decalMap : TEXUNIT0,
+			uniform sampler2D alphaMap : TEXUNIT1) : COLOR { 
+  const float ambientIntensity = 0.25;
+  const float baseDistance = 300.0;
+  float3 L = IN.LightPos - IN.ObjPos;
+  float d = length(L) / 300.0;
+  float intensity = 1.0 / (d*d);
+  float3 Ln = normalize(L);
+  float3 Nn = normalize(IN.Normal);
+  float NdotL = dot(Nn, Ln);
+	
+  // add a little ambient and alpha
+  float lambert = intensity * saturate(NdotL) + ambientIntensity;   
+  float4 alphaValue = tex2D(alphaMap, IN.UV);
+  float4 diffuse = float4(lambert.xxx, alphaValue.w);
+	
+  float4 decalColor = float4(tex2D(decalMap, IN.UV).xyz, 1); 
+  return decalColor * diffuse;
+}

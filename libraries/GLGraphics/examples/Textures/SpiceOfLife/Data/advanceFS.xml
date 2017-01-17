@@ -1,0 +1,7 @@
+<filter name="advanceFS">
+    <description>SpiceOfLife: Advance One Step</description>
+    <fragment>advanceFS.glsl</fragment>
+	<textures input="1" output="1"></textures>
+    <parameter type="vec2" name="StepSize" label="UV Pixel Size">0.1 0.1</parameter>
+</filter>
+

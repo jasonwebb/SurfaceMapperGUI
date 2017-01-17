@@ -1,0 +1,6 @@
+<filter name="Render Average Gradient Shader">
+    <description>Calculates the spatial average of the luminance gradient</description>
+    <fragment>RenderAveGrad.glsl</fragment>
+    <textures input="3" output="2"></textures>    
+    <parameter type="float" name="new_grad_coeff" label="New gradient coefficient">0.0</parameter>
+</filter>

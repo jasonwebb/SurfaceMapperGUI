@@ -1,0 +1,206 @@
+<model name="textured cube">
+    <description>Textured cube with attributes for bump mapping</description>
+    <size>24</size>
+    <geometry>QUADS</geometry>
+    <mode>DYNAMIC</mode>
+
+    <textures>
+        <texture name="Base" file="img.png">0</texture>
+        <texture name="NormalHeight" file="bump.png">1</texture>
+    </textures>
+
+    <vertexattribs>
+        <vertexattrib name="tangent" size="3">0</vertexattrib>
+        <vertexattrib name="binormal" size="3">1</vertexattrib>
+    </vertexattribs>
+
+    <vertices>
+        <vertex>-100 +100 -100</vertex>
+        <vertex>-100 -100 -100</vertex>
+        <vertex>+100 -100 -100</vertex>
+        <vertex>+100 +100 -100</vertex>
+        <vertex>+100 -100 +100</vertex>
+        <vertex>+100 +100 +100</vertex>
+        <vertex>+100 +100 -100</vertex>
+        <vertex>+100 -100 -100</vertex>
+        <vertex>-100 -100 +100</vertex>
+        <vertex>-100 +100 +100</vertex>
+        <vertex>+100 +100 +100</vertex>
+        <vertex>+100 -100 +100</vertex>
+        <vertex>-100 +100 +100</vertex>
+        <vertex>-100 -100 +100</vertex>
+        <vertex>-100 -100 -100</vertex>
+        <vertex>-100 +100 -100</vertex>
+        <vertex>+100 +100 +100</vertex>
+        <vertex>-100 +100 +100</vertex>
+        <vertex>-100 +100 -100</vertex>
+        <vertex>+100 +100 -100</vertex>
+        <vertex>-100 -100 +100</vertex>
+        <vertex>+100 -100 +100</vertex>
+        <vertex>+100 -100 -100</vertex>
+        <vertex>-100 -100 -100</vertex>
+    </vertices>
+
+    <texcoords unit="0">
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+    </texcoords>
+
+    <texcoords unit="1">
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+        <texcoord>0 0</texcoord>
+        <texcoord>0 1</texcoord>
+        <texcoord>1 1</texcoord>
+        <texcoord>1 0</texcoord>
+    </texcoords>
+
+    <colors>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+        <color>1 1 1 1</color>
+    </colors>
+
+    <normals>
+        <normal>0 0 -1</normal>
+        <normal>0 0 -1</normal>
+        <normal>0 0 -1</normal>
+        <normal>0 0 -1</normal>
+        <normal>+1 0 0</normal>
+        <normal>+1 0 0</normal>
+        <normal>+1 0 0</normal>
+        <normal>+1 0 0</normal>
+        <normal>0 0 +1</normal>
+        <normal>0 0 +1</normal>
+        <normal>0 0 +1</normal>
+        <normal>0 0 +1</normal>
+        <normal>-1 0 0</normal>
+        <normal>-1 0 0</normal>
+        <normal>-1 0 0</normal>
+        <normal>-1 0 0</normal>
+        <normal>0 +1 0</normal>
+        <normal>0 +1 0</normal>
+        <normal>0 +1 0</normal>
+        <normal>0 +1 0</normal>
+        <normal>0 -1 0</normal>
+        <normal>0 -1 0</normal>
+        <normal>0 -1 0</normal>
+        <normal>0 -1 0</normal>
+    </normals>
+
+    <attribs number="0">
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>0 0 +1</attrib>
+        <attrib>0 0 +1</attrib>
+        <attrib>0 0 +1</attrib>
+        <attrib>0 0 +1</attrib>
+        <attrib>-1 0 0</attrib>
+        <attrib>-1 0 0</attrib>
+        <attrib>-1 0 0</attrib>
+        <attrib>-1 0 0</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+        <attrib>+1 0 0</attrib>
+    </attribs>
+
+    <attribs number="1">
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 -1 0</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+        <attrib>0 0 -1</attrib>
+    </attribs>
+
+</model>

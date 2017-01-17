@@ -1,0 +1,6 @@
+<filter name="pixelate effect">
+    <description>Pixelation filter</description>
+    <fragment>Pixelate.glsl</fragment>
+    <textures input="1" output="1"></textures>
+    <parameter type="float" name="pixel_size" label="Pixel size">10</parameter>
+</filter>

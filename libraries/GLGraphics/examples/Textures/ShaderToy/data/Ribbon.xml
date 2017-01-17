@@ -1,0 +1,11 @@
+<filter name="To The Road Of Ribbon">
+    <description>Based on a production from the demoscene, the 1k intro by FRequency (http://www.pouet.net/prod.php?which=53939). It made 2nd position in the Main demoparty held in France</description>
+    <fragment>Ribbon.glsl</fragment>    
+    <textures input="0" output="1"></textures>    
+    <parameters>
+        
+        <parameter type="float" name="time" label="Time">0</parameter>
+    
+        <parameter type="vec2" name="resolution" label="Screen resolution">0 0</parameter>     
+    </parameters>
+</filter>

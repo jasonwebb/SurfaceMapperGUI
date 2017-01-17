@@ -1,0 +1,5 @@
+<filter name="Render Gradient Shader">
+    <description>Calculates the gradient of the luminance of the input image</description>
+    <fragment>RenderGrad2fp.glsl</fragment>
+    <textures input="2" output="1"></textures>
+</filter>

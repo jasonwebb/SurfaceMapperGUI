@@ -1,0 +1,12 @@
+<filter name="Angular fisheye">
+    <description>Appplies an angular fish-eye mapping on the input texture</description>
+    <fragment>FishEye.glsl</fragment>
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="texture0" offset="offset0" label="Input texture">0</intexture>     
+    </textures>
+    <parameters>
+
+        <parameter type="float" name="aperture" label="Angular aperture of the lenses">180</parameter>
+    </parameters>
+
+</filter>

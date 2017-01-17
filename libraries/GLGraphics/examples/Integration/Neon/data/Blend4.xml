@@ -1,0 +1,11 @@
+<filter name="4 textures blender">
+    <description>Filter that does and additive blending of four textures</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>Blend4.glsl</fragment>
+    <textures input="4" output="1">
+        <intexture type="sampler2d" name="tex0" label="First input image">0</intexture>
+        <intexture type="sampler2d" name="tex1" label="Second input image">1</intexture>
+        <intexture type="sampler2d" name="tex2" label="Third input image">2</intexture>
+        <intexture type="sampler2d" name="tex3" label="Fourth input image">3</intexture>                        
+    </textures>
+</filter>

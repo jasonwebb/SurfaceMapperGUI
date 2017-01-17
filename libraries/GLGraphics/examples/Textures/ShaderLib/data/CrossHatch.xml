@@ -1,0 +1,18 @@
+<filter name="Cross Hatching">
+    <description>A GLSL implementation of cross-hatching effect</description>
+    <vertex>CrossHatchVert.glsl</vertex>        
+    <fragment>CrossHatchFrag.glsl</fragment>    
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="sceneTex" offset="offset" label="Input texture">0</intexture> 
+    </textures>    
+    <parameters>
+        <parameter type="float" name="hatch_y_offset" label="hatch_y_offset">5.0</parameter>  
+        <parameter type="float" name="lum_threshold_1" label="lum_threshold_1">1.0</parameter>  
+        <parameter type="float" name="lum_threshold_2" label="lum_threshold_2">0.7</parameter>  
+        <parameter type="float" name="lum_threshold_3" label="lum_threshold_3">0.5</parameter>
+        <parameter type="float" name="lum_threshold_4" label="lum_threshold_4">0.3</parameter>        
+    </parameters>
+</filter>
+
+
+

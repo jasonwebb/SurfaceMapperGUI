@@ -1,0 +1,8 @@
+<filter name="zoomFS">
+    <description>CopyBuffer</description>
+    <fragment>zoomFS.glsl</fragment>
+	<textures input="1" output="1"></textures>
+    <parameter type="vec2" name="Center" label="zoom here">0.5 0.5</parameter>
+    <parameter type="float" name="Scale" label="zoom by this much">1.0</parameter>
+</filter>
+

@@ -1,0 +1,6 @@
+<filter name="copy">
+    <description>Texture copy filter</description>
+    <vertex>SimpleVS.glsl</vertex>
+    <fragment>Copy.glsl</fragment>
+    <textures input="1" output="1"></textures>
+</filter>

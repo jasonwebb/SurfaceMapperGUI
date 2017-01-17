@@ -1,0 +1,10 @@
+<filter name="Subtract">
+    <description>Subtract Blend Mode</description>
+    <fragment>BlendSubtract.glsl</fragment>
+	<textures input="2" output="1">
+        <intexture type="sampler2d" name="bottomSampler" label="source">0</intexture>
+        <intexture type="sampler2d" name="topSampler" label="painted">1</intexture>
+	</textures>
+    <parameter type="float" name="Opacity" label="Opacity">1.0</parameter>
+</filter>
+

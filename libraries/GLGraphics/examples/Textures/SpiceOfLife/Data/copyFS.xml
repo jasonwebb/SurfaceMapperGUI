@@ -1,0 +1,6 @@
+<filter name="copyFS">
+    <description>CopyBuffer</description>
+    <fragment>copyFS.glsl</fragment>
+	<textures input="1" output="1"></textures>
+</filter>
+

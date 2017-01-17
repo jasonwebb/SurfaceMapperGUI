@@ -1,0 +1,8 @@
+<filter name="Simplex Noise Shader">
+    <description>Calculates 4D Simplex Noise</description>
+    <vertex>Noise4vp.glsl</vertex>	
+    <fragment>Noise4fp.glsl</fragment>
+    <textures input="4" output="1"></textures>
+    <parameter type="float" name="time" label="Time">1.0</parameter>
+    <parameter type="float" name="scale" label="Scale">1.0</parameter>    
+</filter>

@@ -1,0 +1,16 @@
+<filter name="Cross Sitching">
+    <description>GLSL port of cross stitching effect from Pixel Bender</description>
+    <vertex>CrossStichVert.glsl</vertex>        
+    <fragment>CrossStichFrag.glsl</fragment>    
+    <textures input="1" output="1">
+        <intexture type="sampler2d" name="tex0" offset="offset" label="Input texture">0</intexture> 
+    </textures>    
+    <parameters>
+       
+        <parameter type="float" name="stitching_size" label="stitching_size">5.0</parameter>       
+        <parameter type="int" name="invert" label="invert">1</parameter>                       
+    </parameters>
+</filter>
+
+
+
